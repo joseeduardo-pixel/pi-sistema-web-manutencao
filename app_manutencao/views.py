@@ -2,21 +2,17 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-
 from django.db.models import Sum, F, ExpressionWrapper, DecimalField
-
 from .models import Equipamento, ItemManutencao
 from .forms import EquipamentoForm, ItemManutencaoFormSet, ManutencaoForm
-
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 from xhtml2pdf import pisa
-
-
 from django.views.generic import View
-# =========================
+
+
 # REGISTER
-# =========================
+
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -30,26 +26,25 @@ def register(request):
     return render(request, 'registration/register.html', {'form': form})
 
 
-# =========================
+
 # LISTA DE EQUIPAMENTOS
-# =========================
+
 @login_required
 def lista_equipamentos(request):
     equipamentos = Equipamento.objects.all()
     return render(request, 'equipamentos/lista.html', {'equipamentos': equipamentos})
 
 
-# =========================
+
 # PROFILE
-# =========================
+
 @login_required
 def profile(request):
     return render(request, 'registration/profile.html')
 
 
-# =========================
-# CADASTRO EQUIPAMENTO + ITENS
-# =========================
+# CADASTRO DE EQUIPAMENTO + ITENS
+
 @login_required
 def cadastro_equipamento(request):
 
@@ -78,9 +73,6 @@ def cadastro_equipamento(request):
     })
 
 
-# =========================
-# RELATÓRIO
-# =========================
 @login_required
 def relatorio_equipamentos(request):
 
@@ -114,29 +106,7 @@ def relatorio_equipamentos(request):
 
     return render(request, 'relatorios/relatorio_equipamentos.html', {'dados': dados})
 
-##incluido depois
-'''
-@login_required
-def relatorio(request):
 
-    dados = gerar_dados()  # ou Equipamento.objects.all()
-
-    com_manutencao = []
-    sem_manutencao = []
-
-    for item in dados:
-        if item['itens']:
-            com_manutencao.append(item)
-        else:
-            sem_manutencao.append(item)
-
-    context = {
-        'com_manutencao': com_manutencao,
-        'sem_manutencao': sem_manutencao,
-    }
-
-    return render(request, 'relatorio_equipamentos.html', context)
-'''
 
 @login_required
 def relatorio(request):
@@ -175,10 +145,6 @@ def relatorio(request):
     
 
 
-
-
-
-
 @login_required
 def cadastrar_manutencao(request):
 
@@ -207,21 +173,7 @@ def cadastrar_manutencao(request):
     })
 
 
-### ALTERAÇÃO PARA INSERIR TOTAL GERAL NO RELATÓRIO DE MANUTENÇÕES POR EQUIPAMENTO
-'''
-def relatorio_view(request):
-    # ... sua lógica para gerar a lista 'dados' ...
-    
-    # CALCULE O TOTAL GERAL AQUI
-    total_geral = sum(item['total'] for item in dados if 'total' in item)
 
-    context = {
-        'dados': dados,
-        'total_geral': total_geral,  # Enviando a soma para o HTML
-    }
-    return render(request, 'seu_template.html', context)
-
-'''
 ### ALTERAÇÃO PARA INSERIR TOTAL GERAL NO RELATÓRIO DE TODOS EQUIPAMENTOS
 
 @login_required
@@ -239,62 +191,7 @@ def relatorio_manutencao(request):
 
 
 
-'''
-
-@login_required
-def relatorio_pdf(request):
-    # Buscamos os equipamentos
-    equipamentos = Equipamento.objects.all()
-    dados = []
-    total_geral_relatorio = 0
-    nome_predio = "UNESP - Campus de Marília"
-
-    for equipamento in equipamentos:
-        # FILTRO CRUCIAL:
-        # 1. Buscamos em ItemManutencao
-        # 2. Filtramos pela relação 'manutencao' onde o campo 'finalizado' é False
-        # 3. select_related evita centenas de consultas extras ao banco (performance)
-        itens_pendentes = ItemManutencao.objects.filter(
-            equipamento=equipamento,
-            manutencao__finalizado=False
-        ).select_related('manutencao')
-
-        # Se não houver itens abertos para este equipamento, pulamos para o próximo
-        if itens_pendentes.exists():
-            total_equip = 0
-            
-            for i in itens_pendentes:
-                # Cálculo do total do item (Quantidade x Valor)
-                i.total_item = i.quantidade * i.valor_unitario
-                total_equip += i.total_item
-
-            # Só adicionamos ao relatório se o valor total for maior que zero
-            if total_equip > 0:
-                total_geral_relatorio += total_equip
-                dados.append({
-                    'equipamento': equipamento,
-                    'itens': itens_pendentes,
-                    'total': total_equip
-                })
-
-    # Caso nenhum equipamento tenha manutenção aberta
-    if not dados:
-        return HttpResponse("<h2>Nenhuma manutenção pendente encontrada.</h2>")
-
-    html = render_to_string('relatorios/relatorio_equipamentos_pdf.html', {
-        'dados': dados,
-        'total_geral': total_geral_relatorio,
-        'nome_predio': nome_predio,
-    })
-
-    response = HttpResponse(content_type='application/pdf')
-    pisa_status = pisa.CreatePDF(html, dest=response)
-    return response
-
-'''
-
 #VIEW FUNCIONAL PARA RELATÓRIO PDF, PORÉM NÃO FILTRA FINALIZADOS
-
 
 @login_required
 def relatorio_pdf(request):
@@ -328,9 +225,6 @@ def relatorio_pdf(request):
     response = HttpResponse(content_type='application/pdf')
     pisa_status = pisa.CreatePDF(html, dest=response)
     return response
-
-
-
 
 
 
@@ -376,4 +270,3 @@ def cadastro_manutencao(request):
         'form': form,
         'itens': formset
     })
-
