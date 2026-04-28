@@ -1,15 +1,12 @@
-venv/
-.venv/
-__pycache__/
-*.pyc
-db.sqlite3
-get-pip.py
-
 # --- Python ---
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
+
+get-pip.py
+
 
 # C extensions
 *.so
@@ -72,3 +69,5 @@ db.sqlite3
 # --- OS ---
 .DS_Store
 Thumbs.db
+
+
