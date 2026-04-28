@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Equipamento</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: 30px auto;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        h3 {
+            margin-top: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        /* GRID 3 COLUNAS */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        /* MANUTENÇÃO */
+        .formset-item {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+
+        <h2>Cadastro de Equipamento</h2>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <h3>Dados do Equipamento</h3>
+
+            <div class="grid-3">
+
+                <div>
+                    <label>Patrimônio</label>
+                    {{ form.patrimonio }}
+                </div>
+
+                <div>
+                    <label>Capacidade</label>
+                    {{ form.capacidade }}
+                </div>
+
+                <div>
+                    <label>Unidade Medida</label>
+                    {{ form.unidade_medida }}
+                </div>
+
+                <div>
+                    <label>Valor do Bem</label>
+                    {{ form.valor_bem }}
+                </div>
+
+                <div>
+                    <label>Situação</label>
+                    {{ form.situacao }}
+                </div>
+
+                <div>
+                    <label>Categoria</label>
+                    {{ form.categoria }}
+                </div>
+
+                <div>
+                    <label>Marca</label>
+                    {{ form.marca }}
+                </div>
+
+                <div>
+                    <label>Local</label>
+                    {{ form.local }}
+                </div>
+
+            </div>
+
+            <h3>Itens de Manutenção</h3>
+
+            {{ formset.management_form }}
+
+            {% for f in formset %}
+                <div class="formset-item">
+
+                    <div>
+                        <label>Manutenção</label>
+                        {{ f.manutencao }}
+                    </div>
+
+                    <div>
+                        <label>Descrição</label>
+                        {{ f.descricao }}
+                    </div>
+
+                    <div>
+                        <label>Quantidade</label>
+                        {{ f.quantidade }}
+                    </div>
+
+                    <div>
+                        <label>Valor Unitário</label>
+                        {{ f.valor_unitario }}
+                    </div>
+
+                </div>
+            {% endfor %}
+
+            <div class="btn-container">
+                <button type="submit">Salvar</button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>
+<div style="text-align: center; margin-bottom: 20px;">
+    <a href="{% url 'relatorio' %}">
+        <button type="button" style="background-color: green;">
+            Ver Relatório
+        </button>
+    </a>
+</div>

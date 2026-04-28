@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block title %}REGITRO DE NOVO USUÁRIO{% endblock %}
+
+{% block content %}
+    <style>
+        body {
+            background: #f4f6f9;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .register-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 2px auto;
+            padding: 2px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        form p {
+            margin-bottom: 5px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 5px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #1e7e34;
+        }
+
+        .login-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .login-link a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="register-container">
+    <h2>📝 Criar Nova Conta</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <div class="login-link">
+        <p>Já tem uma conta?</p>
+        <a href="{% url 'login' %}">Fazer login</a>
+    </div>
+</div>
+
+</body>
+</html>
+
+{% endblock %}

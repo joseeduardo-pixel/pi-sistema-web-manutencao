@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}UNESP | Sistema Web de Manutenção{% endblock %}</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --unesp-green: #118696;
+            --unesp-blue: #003366;
+            --soft-bg: #f8f9fa;
+            --border-color: #e0e6ed;
+        }
+
+        body {
+            background-color: var(--soft-bg);
+            color: #444;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem; /* Reduzido levemente */
+        }
+
+        /* Navbar mais fina */
+        .navbar {
+            background: #fff !important;
+            border-bottom: 2px solid var(--unesp-green);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            padding: 0.5rem 0; /* Reduzido de 1rem para 0.5rem */
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            color: var(--unesp-blue) !important;
+            font-size: 1rem;
+        }
+
+        /* Cards mais compactos */
+        .card-header {
+            background: #fff;
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1.25rem; /* Reduzido padding vertical */
+        }
+
+        /* Títulos de seção com menos margem */
+        .section-title {
+            color: var(--unesp-green);
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0.8rem 0 0.5rem; /* Reduzido drasticamente (era 1.5rem) */
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+            margin-left: 10px;
+        }
+
+        /* Formulários mais baixos */
+        .form-label {
+            font-weight: 600;
+            color: #555;
+            font-size: 0.75rem;
+            margin-bottom: 0.2rem; /* Menos espaço entre label e input */
+        }
+
+        .form-control, .form-select {
+            padding: 0.4rem 0.6rem; /* Reduzido de 0.6rem para 0.4rem */
+            font-size: 0.8rem;
+        }
+
+        /* Ajuste na área principal para subir o conteúdo */
+        main.container {
+            padding-top: 1rem !important; /* Ganho de espaço no topo */
+            padding-bottom: 1rem !important;
+        }
+
+        .table tbody td {
+            padding: 0.4rem;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid px-lg-5 d-flex align-items-center">
+        <div class="navbar-brand">
+            <i class="fas fa-tools me-2 text-primary"></i>
+            <span>Sistema Web para Gestão de Manutenção de Equipamentos de Ar-condicionado</span>
+        </div> 
+
+        <div class="ms-auto d-flex align-items-center">
+            
+            <a href="https://www.marilia.unesp.br/" class="text-decoration-none d-none d-md-block">
+                <span class="badge bg-light text-dark border p-1" style="font-size: 0.7rem; cursor: pointer;">
+                    <i class="fas fa-university me-1 text-success"></i> UNESP - Campus Marília
+                </span>
+            </a>
+
+            {% if request.resolver_match.url_name != 'login' and request.resolver_match.url_name != 'register' %}
+                <form action="{% url 'logout' %}" method="post" class="ms-2">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-danger shadow-sm" 
+                            style="padding: 0.15rem 0.5rem; font-size: 0.7rem; font-weight: 700; line-height: 1.2;">
+                        <i class="fas fa-sign-out-alt me-1"></i>SAIR
+                    </button>
+                </form>    
+            {% endif %}
+
+        </div>
+    </div>
+</nav>
+
+
+
+
+<main class="container">
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer class="py-3 text-center text-muted border-top bg-white">
+    <small>&copy; {% now "Y" %} UNESP - Sistemas</small>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
