@@ -30,7 +30,7 @@ class Marca(models.Model):
 
 class Equipamento(models.Model):
     patrimonio = models.CharField(max_length=50, unique=True)
-    capacidade = models.DecimalField(max_digits=10, decimal_places=0)
+    capacidade = models.DecimalField(max_digits=10, decimal_places=2)
     unidade_medida = models.CharField(max_length=20)
     valor_bem = models.DecimalField(max_digits=10, decimal_places=2)
     situacao = models.CharField(max_length=50)

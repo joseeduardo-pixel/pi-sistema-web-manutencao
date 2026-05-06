@@ -7,6 +7,7 @@ urlpatterns = [
     path('admin/', admin.site.urls), # ESTA URLPERMITE ACESSAR ADMIN DO DJANGO
     path('', include('app_manutencao.urls')),
 
+    path('lista/', views.lista_equipamentos, name='lista_equipamentos'),
 ]   
 
 

@@ -11,8 +11,9 @@ from xhtml2pdf import pisa
 from django.views.generic import View
 
 
+# =========================
 # REGISTER
-
+# =========================
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -26,25 +27,26 @@ def register(request):
     return render(request, 'registration/register.html', {'form': form})
 
 
-
+# =========================
 # LISTA DE EQUIPAMENTOS
-
+# =========================
 @login_required
 def lista_equipamentos(request):
     equipamentos = Equipamento.objects.all()
     return render(request, 'equipamentos/lista.html', {'equipamentos': equipamentos})
 
 
-
+# =========================
 # PROFILE
-
+# =========================
 @login_required
 def profile(request):
     return render(request, 'registration/profile.html')
 
 
-# CADASTRO DE EQUIPAMENTO + ITENS
-
+# =========================
+# CADASTRO EQUIPAMENTO + ITENS
+# =========================
 @login_required
 def cadastro_equipamento(request):
 
@@ -73,6 +75,9 @@ def cadastro_equipamento(request):
     })
 
 
+# =========================
+# RELATÓRIO
+# =========================
 @login_required
 def relatorio_equipamentos(request):
 
@@ -106,32 +111,17 @@ def relatorio_equipamentos(request):
 
     return render(request, 'relatorios/relatorio_equipamentos.html', {'dados': dados})
 
+##incluido depois
 
-
-@login_required
 def relatorio(request):
 
-    dados = gerar_dados()
+    dados = gerar_dados()  # ou Equipamento.objects.all()
 
     com_manutencao = []
     sem_manutencao = []
 
     for item in dados:
-
-        # 🔥 FILTRO GARANTIDO (funciona mesmo se for lista)
-        itens_filtrados = [
-            i for i in item['itens']
-            if not i.manutencao.finalizado
-        ]
-
-        # Atualiza os itens
-        item['itens'] = itens_filtrados
-
-        # Recalcula total
-        item['total'] = sum(i.total_item for i in itens_filtrados)
-
-        # Separação
-        if itens_filtrados:
+        if item['itens']:
             com_manutencao.append(item)
         else:
             sem_manutencao.append(item)
@@ -142,10 +132,8 @@ def relatorio(request):
     }
 
     return render(request, 'relatorio_equipamentos.html', context)
-    
 
 
-@login_required
 def cadastrar_manutencao(request):
 
     if request.method == 'POST':
@@ -173,10 +161,23 @@ def cadastrar_manutencao(request):
     })
 
 
+### ALTERAÇÃO PARA INSERIR TOTAL GERAL NO RELATÓRIO DE MANUTENÇÕES POR EQUIPAMENTO
+'''
+def relatorio_view(request):
+    # ... sua lógica para gerar a lista 'dados' ...
+    
+    # CALCULE O TOTAL GERAL AQUI
+    total_geral = sum(item['total'] for item in dados if 'total' in item)
 
+    context = {
+        'dados': dados,
+        'total_geral': total_geral,  # Enviando a soma para o HTML
+    }
+    return render(request, 'seu_template.html', context)
+
+'''
 ### ALTERAÇÃO PARA INSERIR TOTAL GERAL NO RELATÓRIO DE TODOS EQUIPAMENTOS
 
-@login_required
 def relatorio_manutencao(request):
     dados = [] # Aqui está a sua lista de equipamentos que você já tem
     
@@ -191,9 +192,6 @@ def relatorio_manutencao(request):
 
 
 
-#VIEW FUNCIONAL PARA RELATÓRIO PDF, PORÉM NÃO FILTRA FINALIZADOS
-
-@login_required
 def relatorio_pdf(request):
     equipamentos = Equipamento.objects.all()
     dados = []
@@ -227,8 +225,6 @@ def relatorio_pdf(request):
     return response
 
 
-
-@login_required
 def cadastro_equipamento(request):
     if request.method == 'POST':
         form = EquipamentoForm(request.POST)
@@ -248,8 +244,6 @@ def cadastro_equipamento(request):
     })
 
 
-
-@login_required
 def cadastro_manutencao(request):
     form = ManutencaoForm(request.POST or None)
     formset = ItemManutencaoFormSet(request.POST or None)
@@ -270,3 +264,4 @@ def cadastro_manutencao(request):
         'form': form,
         'itens': formset
     })
+

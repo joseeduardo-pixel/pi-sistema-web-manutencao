@@ -1,0 +1,1196 @@
+[
+{
+  "model": "app_manutencao.predio",
+  "pk": 1,
+  "fields": {
+    "nome_predio": "Prédio do CEES - CER",
+    "descricao": "Prédio do CEES - CER"
+  }
+},
+{
+  "model": "app_manutencao.predio",
+  "pk": 2,
+  "fields": {
+    "nome_predio": "Prédio de Educação",
+    "descricao": "Prédio de Educação"
+  }
+},
+{
+  "model": "app_manutencao.predio",
+  "pk": 3,
+  "fields": {
+    "nome_predio": "Prédio de Administração",
+    "descricao": "Prédio de Administração"
+  }
+},
+{
+  "model": "app_manutencao.predio",
+  "pk": 4,
+  "fields": {
+    "nome_predio": "Prédio do CEES - CER “Dr. Heraldo Lorena Guida\"",
+    "descricao": "Prédio do CEER - CER"
+  }
+},
+{
+  "model": "app_manutencao.predio",
+  "pk": 5,
+  "fields": {
+    "nome_predio": "Prédio da Central de Laboratórios Didáticos de Informática - CLDI",
+    "descricao": "Central de Laboratório da Fisio e TO"
+  }
+},
+{
+  "model": "app_manutencao.predio",
+  "pk": 6,
+  "fields": {
+    "nome_predio": "Prédio de Salas de aulas de Fisioterapia e Terapia ocupacional",
+    "descricao": "Prédio de Salas de aulas de Fisio e TO"
+  }
+},
+{
+  "model": "app_manutencao.predio",
+  "pk": 7,
+  "fields": {
+    "nome_predio": "Prédio de Laboratórios de Fisioterapia e Terapia ocupacional",
+    "descricao": "Prédio de Laboratórios de Fisio e TO"
+  }
+},
+{
+  "model": "app_manutencao.predio",
+  "pk": 8,
+  "fields": {
+    "nome_predio": "Prédio da Seção Técnica de Saúde",
+    "descricao": "Prédio da STS"
+  }
+},
+{
+  "model": "app_manutencao.predio",
+  "pk": 9,
+  "fields": {
+    "nome_predio": "Prédio de Atividades Didáticas",
+    "descricao": "Prédio de Didática"
+  }
+},
+{
+  "model": "app_manutencao.predio",
+  "pk": 10,
+  "fields": {
+    "nome_predio": "Prédio da Central de Salas de Aula",
+    "descricao": "Prédio da CSA"
+  }
+},
+{
+  "model": "app_manutencao.predio",
+  "pk": 11,
+  "fields": {
+    "nome_predio": "Prédio do Centro de Convivência Infantil",
+    "descricao": "Prédio do CCI"
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 1,
+  "fields": {
+    "nome_local": "Sala nº 24 - Seção Técnica de Materiais",
+    "predio": 3
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 2,
+  "fields": {
+    "nome_local": "Sala nº 02 - Departamento de Fonoaudiologia",
+    "predio": 2
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 3,
+  "fields": {
+    "nome_local": "Sala nº 09 - Seção Técnica de Gestão de Pessoas",
+    "predio": 3
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 4,
+  "fields": {
+    "nome_local": "Sala nº 03 - Recepção",
+    "predio": 4
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 5,
+  "fields": {
+    "nome_local": "Sala nº 06 - Atendimento Psicologia",
+    "predio": 8
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 6,
+  "fields": {
+    "nome_local": "Sala nº 16 - Assistente Social",
+    "predio": 8
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 7,
+  "fields": {
+    "nome_local": "Sala nº 23 - Laboratório de Anatomia",
+    "predio": 9
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 8,
+  "fields": {
+    "nome_local": "Sala nº 28 - Anfiteatro 01",
+    "predio": 9
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 9,
+  "fields": {
+    "nome_local": "Sala de Aula nº 08",
+    "predio": 10
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 10,
+  "fields": {
+    "nome_local": "Sala de Aula nº 09",
+    "predio": 10
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 11,
+  "fields": {
+    "nome_local": "Sala nº 19 - Rack do Servidor do DTI",
+    "predio": 2
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 12,
+  "fields": {
+    "nome_local": "Sala nº 09 - Laboratório de Cinesiologia",
+    "predio": 7
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 13,
+  "fields": {
+    "nome_local": "Sala de Aula nº 01",
+    "predio": 6
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 14,
+  "fields": {
+    "nome_local": "Sala nº  01 - Saguão da Recepção",
+    "predio": 4
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 15,
+  "fields": {
+    "nome_local": "Sala nº 029 - Sala de Cinesioterapia",
+    "predio": 4
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 16,
+  "fields": {
+    "nome_local": "Sala nº 062 - Mecanoterapia",
+    "predio": 4
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 17,
+  "fields": {
+    "nome_local": "Sala nº 023 - Copa Funcionários",
+    "predio": 4
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 18,
+  "fields": {
+    "nome_local": "Sala nº 016 - Enfermagem - CEES",
+    "predio": 4
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 19,
+  "fields": {
+    "nome_local": "Sala nº 004 - Secretaria",
+    "predio": 4
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 20,
+  "fields": {
+    "nome_local": "Sala nº 03 - Laboratório de Tecnologias Informacionais",
+    "predio": 5
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 21,
+  "fields": {
+    "nome_local": "Sala nº 01 - Laboratório de Desenvolvimento e Aplicações Multimídia",
+    "predio": 5
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 22,
+  "fields": {
+    "nome_local": "Sala nº 04 - LABI - Pós Graduação",
+    "predio": 5
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 23,
+  "fields": {
+    "nome_local": "Sala nº 05 - LABI 05",
+    "predio": 5
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 24,
+  "fields": {
+    "nome_local": "Sala de Aula nº 07",
+    "predio": 10
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 25,
+  "fields": {
+    "nome_local": "Sala nº 12",
+    "predio": 3
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 26,
+  "fields": {
+    "nome_local": "Saguão em frente a Congregação",
+    "predio": 3
+  }
+},
+{
+  "model": "app_manutencao.local",
+  "pk": 27,
+  "fields": {
+    "nome_local": "Centro de Convivência Infantil",
+    "predio": 11
+  }
+},
+{
+  "model": "app_manutencao.categoria",
+  "pk": 1,
+  "fields": {
+    "nome_categoria": "ar condicionado"
+  }
+},
+{
+  "model": "app_manutencao.categoria",
+  "pk": 2,
+  "fields": {
+    "nome_categoria": "Bebedouro"
+  }
+},
+{
+  "model": "app_manutencao.categoria",
+  "pk": 3,
+  "fields": {
+    "nome_categoria": "Cortina de Ar"
+  }
+},
+{
+  "model": "app_manutencao.categoria",
+  "pk": 4,
+  "fields": {
+    "nome_categoria": "Purificador de água"
+  }
+},
+{
+  "model": "app_manutencao.marca",
+  "pk": 1,
+  "fields": {
+    "marca": "Midea"
+  }
+},
+{
+  "model": "app_manutencao.marca",
+  "pk": 2,
+  "fields": {
+    "marca": "LG"
+  }
+},
+{
+  "model": "app_manutencao.marca",
+  "pk": 3,
+  "fields": {
+    "marca": "Midea"
+  }
+},
+{
+  "model": "app_manutencao.marca",
+  "pk": 4,
+  "fields": {
+    "marca": "Philco"
+  }
+},
+{
+  "model": "app_manutencao.marca",
+  "pk": 5,
+  "fields": {
+    "marca": "AICY"
+  }
+},
+{
+  "model": "app_manutencao.marca",
+  "pk": 6,
+  "fields": {
+    "marca": "APC / Schneider"
+  }
+},
+{
+  "model": "app_manutencao.marca",
+  "pk": 7,
+  "fields": {
+    "marca": "BOSCH"
+  }
+},
+{
+  "model": "app_manutencao.marca",
+  "pk": 8,
+  "fields": {
+    "marca": "Canovas - LP100"
+  }
+},
+{
+  "model": "app_manutencao.marca",
+  "pk": 9,
+  "fields": {
+    "marca": "CARRIER"
+  }
+},
+{
+  "model": "app_manutencao.marca",
+  "pk": 10,
+  "fields": {
+    "marca": "SAMSUNG"
+  }
+},
+{
+  "model": "app_manutencao.marca",
+  "pk": 11,
+  "fields": {
+    "marca": "RHEEM"
+  }
+},
+{
+  "model": "app_manutencao.marca",
+  "pk": 12,
+  "fields": {
+    "marca": "SPRINGER"
+  }
+},
+{
+  "model": "app_manutencao.marca",
+  "pk": 13,
+  "fields": {
+    "marca": "Caumak - BCM100"
+  }
+},
+{
+  "model": "app_manutencao.marca",
+  "pk": 14,
+  "fields": {
+    "marca": "ELGIN"
+  }
+},
+{
+  "model": "app_manutencao.marca",
+  "pk": 15,
+  "fields": {
+    "marca": "Europa"
+  }
+},
+{
+  "model": "app_manutencao.marca",
+  "pk": 16,
+  "fields": {
+    "marca": "GREE"
+  }
+},
+{
+  "model": "app_manutencao.marca",
+  "pk": 17,
+  "fields": {
+    "marca": "Komeco"
+  }
+},
+{
+  "model": "app_manutencao.marca",
+  "pk": 18,
+  "fields": {
+    "marca": "TCL"
+  }
+},
+{
+  "model": "app_manutencao.marca",
+  "pk": 19,
+  "fields": {
+    "marca": "YORK"
+  }
+},
+{
+  "model": "app_manutencao.marca",
+  "pk": 20,
+  "fields": {
+    "marca": "CONSUL"
+  }
+},
+{
+  "model": "app_manutencao.marca",
+  "pk": 21,
+  "fields": {
+    "marca": "Noblesse Flex HF"
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 1,
+  "fields": {
+    "patrimonio": "23817",
+    "capacidade": "36000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "4980.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 19,
+    "local": 10
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 2,
+  "fields": {
+    "patrimonio": "23815",
+    "capacidade": "36000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "4980.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 19,
+    "local": 9
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 3,
+  "fields": {
+    "patrimonio": "23748",
+    "capacidade": "12000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "1180.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 10,
+    "local": 5
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 4,
+  "fields": {
+    "patrimonio": "23746",
+    "capacidade": "12000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "1180.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 10,
+    "local": 6
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 5,
+  "fields": {
+    "patrimonio": "12334",
+    "capacidade": "18000.00",
+    "unidade_medida": "Btus",
+    "valor_bem": "2000.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 3,
+    "local": 4
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 6,
+  "fields": {
+    "patrimonio": "21871",
+    "capacidade": "12000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "1100.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 1,
+    "local": 3
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 7,
+  "fields": {
+    "patrimonio": "21874",
+    "capacidade": "12000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "1100.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 3,
+    "local": 3
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 8,
+  "fields": {
+    "patrimonio": "25234",
+    "capacidade": "12000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "2430.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 14,
+    "local": 11
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 9,
+  "fields": {
+    "patrimonio": "23736",
+    "capacidade": "12000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "1180.00",
+    "situacao": "Atvo",
+    "categoria": 1,
+    "marca": 10,
+    "local": 2
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 10,
+  "fields": {
+    "patrimonio": "23818",
+    "capacidade": "36000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "4980.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 19,
+    "local": 10
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 11,
+  "fields": {
+    "patrimonio": "18820",
+    "capacidade": "48000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "5600.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 14,
+    "local": 21
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 12,
+  "fields": {
+    "patrimonio": "18830",
+    "capacidade": "60000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "6120.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 14,
+    "local": 20
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 13,
+  "fields": {
+    "patrimonio": "18829",
+    "capacidade": "60000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "6120.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 14,
+    "local": 22
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 14,
+  "fields": {
+    "patrimonio": "27678",
+    "capacidade": "36000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "4598.98",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 2,
+    "local": 1
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 15,
+  "fields": {
+    "patrimonio": "18824",
+    "capacidade": "30000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "3800.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 14,
+    "local": 23
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 16,
+  "fields": {
+    "patrimonio": "18828",
+    "capacidade": "60000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "6120.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 14,
+    "local": 23
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 17,
+  "fields": {
+    "patrimonio": "23741",
+    "capacidade": "12000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "1180.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 10,
+    "local": 25
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 18,
+  "fields": {
+    "patrimonio": "23030",
+    "capacidade": "24000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "2160.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 10,
+    "local": 12
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 19,
+  "fields": {
+    "patrimonio": "23029",
+    "capacidade": "24000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "2160.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 10,
+    "local": 12
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 20,
+  "fields": {
+    "patrimonio": "26528",
+    "capacidade": "24000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "3280.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 14,
+    "local": 15
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 21,
+  "fields": {
+    "patrimonio": "26482",
+    "capacidade": "12000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "2000.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 14,
+    "local": 17
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 22,
+  "fields": {
+    "patrimonio": "26433",
+    "capacidade": "9000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "1500.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 2,
+    "local": 18
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 23,
+  "fields": {
+    "patrimonio": "26429",
+    "capacidade": "9000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "1500.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 2,
+    "local": 19
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 24,
+  "fields": {
+    "patrimonio": "26428",
+    "capacidade": "9000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "1500.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 2,
+    "local": 4
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 25,
+  "fields": {
+    "patrimonio": "26512",
+    "capacidade": "18000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "3000.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 14,
+    "local": 16
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 26,
+  "fields": {
+    "patrimonio": "26511",
+    "capacidade": "18000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "3000.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 14,
+    "local": 16
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 27,
+  "fields": {
+    "patrimonio": "18827",
+    "capacidade": "60000.00",
+    "unidade_medida": "BTUs",
+    "valor_bem": "6120.00",
+    "situacao": "Ativo",
+    "categoria": 1,
+    "marca": 14,
+    "local": 23
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 28,
+  "fields": {
+    "patrimonio": "20327",
+    "capacidade": "1.80",
+    "unidade_medida": "Litros",
+    "valor_bem": "1200.00",
+    "situacao": "Baixado",
+    "categoria": 4,
+    "marca": 15,
+    "local": 26
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 29,
+  "fields": {
+    "patrimonio": "20314",
+    "capacidade": "1.80",
+    "unidade_medida": "Litros",
+    "valor_bem": "1220.00",
+    "situacao": "Ativo",
+    "categoria": 4,
+    "marca": 15,
+    "local": 27
+  }
+},
+{
+  "model": "app_manutencao.equipamento",
+  "pk": 30,
+  "fields": {
+    "patrimonio": "322323",
+    "capacidade": "100.00",
+    "unidade_medida": "Litros",
+    "valor_bem": "12333.00",
+    "situacao": "Ativo",
+    "categoria": 2,
+    "marca": 15,
+    "local": 13
+  }
+},
+{
+  "model": "app_manutencao.fornecedor",
+  "pk": 1,
+  "fields": {
+    "razao_social": "MARCIO CLEBER SILVA 25502933806",
+    "cnpj": "26.801.247/0001-09",
+    "telefone": "(14) 3451-8850",
+    "email": "preventck@gmail.com"
+  }
+},
+{
+  "model": "app_manutencao.fornecedor",
+  "pk": 2,
+  "fields": {
+    "razao_social": "45.709.113 CHRISTIAN FERNANDO CARDOSO",
+    "cnpj": "45.709.113/0001-07",
+    "telefone": "14991942010",
+    "email": "ambitherm.financeiro@gmail.com"
+  }
+},
+{
+  "model": "app_manutencao.manutencao",
+  "pk": 1,
+  "fields": {
+    "data": "2026-04-17",
+    "nota_fiscal": "ORÇAMENTO - CLDI",
+    "fornecedor": 2,
+    "solicitacao": 1,
+    "finalizado": true
+  }
+},
+{
+  "model": "app_manutencao.manutencao",
+  "pk": 2,
+  "fields": {
+    "data": "2026-04-20",
+    "nota_fiscal": "ORÇAMENTO CEES E TO",
+    "fornecedor": 2,
+    "solicitacao": 2,
+    "finalizado": true
+  }
+},
+{
+  "model": "app_manutencao.manutencao",
+  "pk": 3,
+  "fields": {
+    "data": "2026-04-17",
+    "nota_fiscal": "ORÇAMENTO - CSA",
+    "fornecedor": 2,
+    "solicitacao": 3,
+    "finalizado": false
+  }
+},
+{
+  "model": "app_manutencao.manutencao",
+  "pk": 4,
+  "fields": {
+    "data": "2026-04-22",
+    "nota_fiscal": "ORÇAMENTO STS",
+    "fornecedor": 2,
+    "solicitacao": 4,
+    "finalizado": false
+  }
+},
+{
+  "model": "app_manutencao.manutencao",
+  "pk": 5,
+  "fields": {
+    "data": "2026-04-22",
+    "nota_fiscal": "ORÇAMENTO ADM",
+    "fornecedor": 2,
+    "solicitacao": 5,
+    "finalizado": false
+  }
+},
+{
+  "model": "app_manutencao.manutencao",
+  "pk": 6,
+  "fields": {
+    "data": "2026-04-21",
+    "nota_fiscal": "ORÇAMENTO - CAMPUS II",
+    "fornecedor": 2,
+    "solicitacao": 6,
+    "finalizado": false
+  }
+},
+{
+  "model": "app_manutencao.manutencao",
+  "pk": 7,
+  "fields": {
+    "data": "2026-04-29",
+    "nota_fiscal": "TESTE",
+    "fornecedor": 1,
+    "solicitacao": 56,
+    "finalizado": false
+  }
+},
+{
+  "model": "app_manutencao.manutencao",
+  "pk": 8,
+  "fields": {
+    "data": "2026-03-31",
+    "nota_fiscal": "tets[",
+    "fornecedor": 1,
+    "solicitacao": 23,
+    "finalizado": false
+  }
+},
+{
+  "model": "app_manutencao.manutencao",
+  "pk": 9,
+  "fields": {
+    "data": "2026-04-30",
+    "nota_fiscal": "Danfe 0234 série 1",
+    "fornecedor": 2,
+    "solicitacao": 123443,
+    "finalizado": false
+  }
+},
+{
+  "model": "app_manutencao.itemmanutencao",
+  "pk": 1,
+  "fields": {
+    "equipamento": 11,
+    "manutencao": 1,
+    "descricao": "Serviços de Troca de capacitor - com fornecimento do material",
+    "quantidade": "2.00",
+    "valor_unitario": "150.00"
+  }
+},
+{
+  "model": "app_manutencao.itemmanutencao",
+  "pk": 2,
+  "fields": {
+    "equipamento": 13,
+    "manutencao": 1,
+    "descricao": "Serviços de Troca de capacitor - com fornecimento do material",
+    "quantidade": "2.00",
+    "valor_unitario": "150.00"
+  }
+},
+{
+  "model": "app_manutencao.itemmanutencao",
+  "pk": 3,
+  "fields": {
+    "equipamento": 13,
+    "manutencao": 1,
+    "descricao": "Serviços de Troca de Contatora e reparos elétricos (fiação estava derretida), com fornecimento do material",
+    "quantidade": "1.00",
+    "valor_unitario": "850.00"
+  }
+},
+{
+  "model": "app_manutencao.itemmanutencao",
+  "pk": 4,
+  "fields": {
+    "equipamento": 24,
+    "manutencao": 2,
+    "descricao": "Troca da Placa de evaporadora do ar Split Hi Wall lg 9000 btus. (Incluso peça)",
+    "quantidade": "1.00",
+    "valor_unitario": "450.00"
+  }
+},
+{
+  "model": "app_manutencao.itemmanutencao",
+  "pk": 5,
+  "fields": {
+    "equipamento": 23,
+    "manutencao": 2,
+    "descricao": "Troca de Capacitor da condensadora do ar Split Hi Wall LG 9000 btus. (Capacitor fornecido pelo cliente)",
+    "quantidade": "1.00",
+    "valor_unitario": "120.00"
+  }
+},
+{
+  "model": "app_manutencao.itemmanutencao",
+  "pk": 6,
+  "fields": {
+    "equipamento": 22,
+    "manutencao": 2,
+    "descricao": "Troca de Capacitor da condensadora do ar Split Hi Wall LG 9000 btus. (Capacitor fornecido pelo cliente)",
+    "quantidade": "1.00",
+    "valor_unitario": "120.00"
+  }
+},
+{
+  "model": "app_manutencao.itemmanutencao",
+  "pk": 7,
+  "fields": {
+    "equipamento": 21,
+    "manutencao": 2,
+    "descricao": "Desobstrução e limpeza da bandeja de condensadora do ar condicionado Split Hi Wall  Elghin de 12.000 BTUs.",
+    "quantidade": "1.00",
+    "valor_unitario": "350.00"
+  }
+},
+{
+  "model": "app_manutencao.itemmanutencao",
+  "pk": 8,
+  "fields": {
+    "equipamento": 20,
+    "manutencao": 2,
+    "descricao": "Troca da turbina da evaporadora do ar condicionado Split Hi Eall Elgin 24.000 BTUs.",
+    "quantidade": "1.00",
+    "valor_unitario": "650.00"
+  }
+},
+{
+  "model": "app_manutencao.itemmanutencao",
+  "pk": 9,
+  "fields": {
+    "equipamento": 26,
+    "manutencao": 2,
+    "descricao": "Desobstrução e limpeza da bandeja de condensadora do ar condicionado Split Hi Wall Elghin de 9.000 BTUs.",
+    "quantidade": "1.00",
+    "valor_unitario": "350.00"
+  }
+},
+{
+  "model": "app_manutencao.itemmanutencao",
+  "pk": 10,
+  "fields": {
+    "equipamento": 19,
+    "manutencao": 2,
+    "descricao": "Troca do motor da turbina da evaporadora do ar condicionado split Hi Wall Samsung Inverter 24000 BTUs.",
+    "quantidade": "1.00",
+    "valor_unitario": "950.00"
+  }
+},
+{
+  "model": "app_manutencao.itemmanutencao",
+  "pk": 11,
+  "fields": {
+    "equipamento": 27,
+    "manutencao": 1,
+    "descricao": "Serviços de movimentação de turbina e troca de capacitores",
+    "quantidade": "1.00",
+    "valor_unitario": "600.00"
+  }
+},
+{
+  "model": "app_manutencao.itemmanutencao",
+  "pk": 12,
+  "fields": {
+    "equipamento": 1,
+    "manutencao": 6,
+    "descricao": "0",
+    "quantidade": "0.00",
+    "valor_unitario": "0.00"
+  }
+},
+{
+  "model": "app_manutencao.itemmanutencao",
+  "pk": 13,
+  "fields": {
+    "equipamento": 16,
+    "manutencao": 7,
+    "descricao": "Teste do dia 29",
+    "quantidade": "1.00",
+    "valor_unitario": "24.00"
+  }
+},
+{
+  "model": "app_manutencao.itemmanutencao",
+  "pk": 14,
+  "fields": {
+    "equipamento": 16,
+    "manutencao": 8,
+    "descricao": "Teste do dia 29",
+    "quantidade": "1.00",
+    "valor_unitario": "34.00"
+  }
+},
+{
+  "model": "app_manutencao.itemmanutencao",
+  "pk": 15,
+  "fields": {
+    "equipamento": 29,
+    "manutencao": 9,
+    "descricao": "Troca de torneiras",
+    "quantidade": "3.00",
+    "valor_unitario": "90.00"
+  }
+},
+{
+  "model": "app_manutencao.itemmanutencao",
+  "pk": 16,
+  "fields": {
+    "equipamento": 29,
+    "manutencao": 9,
+    "descricao": "Troca de  filtro",
+    "quantidade": "1.00",
+    "valor_unitario": "70.00"
+  }
+}
+]

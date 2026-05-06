@@ -9,7 +9,7 @@
         <div class="col-lg-8">
             <div class="card shadow-lg">
                 <div class="card-header text-white bg-dark">
-                    <h2 class="h5 mb-1"><i class="fas fa-tools me-2"></i> Cadastro de Equipamnento</h2>
+                    <h2 class="h5 mb-1"><i class="fas fa-tools me-2"></i> Cadastro de Equipamento</h2>
                     <p class="mb-0 opacity-75 small">Cadastrar Novo equipamento</p>
                 </div>
                 
@@ -77,25 +77,20 @@
                              
 
                             <div class="d-flex gap-2">
-                                <button type="submit" class="btn btn-success btn-save shadow">
-                                    <i class="fas fa-save me-2"></i> Salvar 
-                                </button>
-    
-                                <a href="{% url 'cadastro_manutencao' %}" class="btn btn-primary btn-action shadow">
-                                    <i class="fas fa-wrench me-2"></i> Ir para Manutenção
-                                </a>
-                                      
-                                <a href="{% url 'lista_equipamentos' %}" class="btn btn-outline-secondary px-3 shadow-sm">
-                                        <i class="bi bi-list-ul me-1"></i> Lista de Equipamentos
-                                </a>
-
-                                <a class="btn btn-danger" href="/">
-                                     <i class="fas fa-graduation-cap me-2"></i><span>Sair </span>
-                                </a>
-                           
+                                    <form method="post" action="...">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-success">Salvar</button>
+                                        <a href="{% url 'cadastro_manutencao' %}" class="btn btn-primary">Ir para Manutenção</a>
+                                    </form> <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-danger">
+                                            <i class="fas fa-sign-out-alt me-2"></i>Sair
+                                        </button>
+                                    </form>    
+                                          
                             </div>
                         </div>
-                    </form>
+                    </form> 
                 </div>
             </div>
         </div>
@@ -158,3 +153,5 @@
     </div>
 </div>
 {% endblock %}
+
+
