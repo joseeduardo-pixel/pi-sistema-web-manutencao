@@ -64,6 +64,8 @@ db.sqlite3
 *.sql
 *.dump
 
+dados.json
+
 # --- IDEs / Editores ---
 # PyCharm
 .idea/
@@ -73,4 +75,5 @@ db.sqlite3
 # --- OS ---
 .DS_Store
 Thumbs.db
+
 
