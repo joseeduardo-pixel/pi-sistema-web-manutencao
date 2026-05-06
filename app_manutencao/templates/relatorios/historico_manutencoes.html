@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Manutenções</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        body { font-size: 12px; background-color: #f4f7f6; color: #333; font-family: 'Segoe UI', sans-serif; }
+        .card { border: none; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 20px; border-left: 4px solid #3498db; }
+        .equip-title { font-size: 14px; font-weight: 700; color: #2c3e50; border-bottom: 1px solid #eee; margin-bottom: 12px; padding-bottom: 8px; }
+        .label-mini { font-size: 10px; font-weight: 700; color: #95a5a6; text-transform: uppercase; display: block; margin-bottom: 2px; }
+        .valor-dado { font-size: 12px; font-weight: 600; color: #2c3e50; display: block; }
+
+        .table-compact { margin-top: 10px; margin-bottom: 0; }
+        .table-compact thead th { background-color: #f8f9fa; font-size: 10px; text-transform: uppercase; color: #7f8c8d; padding: 8px; }
+        .table-compact tbody td { padding: 8px; vertical-align: middle; border-bottom: 1px solid #f1f1f1; }
+
+        .total-equip { background: #f0fff4; border-top: 1px solid #c3e6cb; padding: 10px 15px; font-weight: 700; color: #1e7e34; font-size: 13px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; }
+        
+        #bloco-soma-geral { background: #2c3e50; color: #fff; border-radius: 10px; padding: 25px; margin-top: 40px; display: none; }
+
+        @media print { .no-print { display: none !important; } body { background-color: white; } }
+    </style>
+</head>
+<body>
+
+<div class="container my-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4 no-print">
+        <h4 class="mb-0 fw-bold"><i class="bi bi-calendar-check text-primary me-2"></i>Histórico de Manutenções</h4>
+        <div class="d-flex gap-2">
+
+             <a href="{% url 'cadastro_manutencao' %}" class="btn btn-cancel px-4">
+                <i class="fas fa-arrow-left me-2"></i>Voltar ao Cadastro
+            </a>
+
+             </a>
+            <a href="/admin/" class="btn btn-outline-secondary btn-sm">Admin</a>
+            <a href="{% url 'relatorio_pdf' %}" class="btn btn-danger btn-sm text-white">
+                <i class="bi bi-file-earmark-pdf"></i> Gerar PDF Oficial
+            </a>
+            <button onclick="window.print()" class="btn btn-primary btn-sm">
+                <i class="bi bi-printer"></i> Imprimir Tela
+            </button>
+        </div>
+    </div>
+
+    {% for item in dados %}
+    {% if item.total > 0 %}
+    <div class="card">
+        <div class="card-body">
+            <!--  <div class="equip-title text-uppercase">
+                <i class="bi bi-tag-fill me-2 text-primary"></i>{{ item.equipamento.patrimonio }} — {{ item.equipamento.marca.marca }}
+            </div> -->
+           
+            <div class="equip-title text-uppercase d-flex justify-content-between align-items-center">
+                <span>
+                    <i class="bi bi-tag-fill me-2 text-primary"></i>{{ item.equipamento.patrimonio }} — {{ item.equipamento.marca.marca }}
+                </span>
+                <button class="btn btn-outline-danger btn-sm no-print border-0" onclick="removerEquipamento(this)">
+                    <i class="bi bi-trash-fill"></i> Ocultar
+                </button>
+            </div>
+
+            <div class="row g-3 mb-3">
+                <div class="col-md-2">
+                    <span class="label-mini">Categoria</span>
+                    <span class="valor-dado">{{ item.equipamento.categoria.nome_categoria }}</span>
+                </div>
+                <div class="col-md-2">
+                    <span class="label-mini">Marca</span>
+                    <span class="valor-dado">{{ item.equipamento.marca.marca }}</span>
+                </div>
+                <div class="col-md-3">
+                    <span class="label-mini">Localização</span>
+                    <span class="valor-dado">{{ item.equipamento.local.nome_local }}</span>
+                </div>
+                <div class="col-md-3">
+                    <span class="label-mini">Prédio</span>
+                    <span class="valor-dado text-primary">
+                        {% if item.equipamento.local.predio %}
+                            <i class="bi bi-building me-1"></i>{{ item.equipamento.local.predio.nome_predio }}
+                        {% else %}
+                            <span class="text-muted">Não informado</span>
+                        {% endif %}
+                    </span>
+                </div>
+                <div class="col-md-2 text-md-end">
+                    <span class="label-mini">Valor Ativo</span>
+                    <span class="valor-dado">R$ {{ item.equipamento.valor_bem|floatformat:2 }}</span>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-sm table-compact">
+                    <thead>
+                        <tr>
+                            <th style="width: 100px;">Data</th> <th>Descrição do Serviço / Material</th>
+                            <th class="text-center" style="width: 60px;">Qtd</th>
+                            <th class="text-end" style="width: 100px;">Unitário</th>
+                            <th class="text-end" style="width: 100px;">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for m in item.itens %}
+                        <tr>
+                            <td class="text-muted fw-bold">
+                                {{ m.manutencao.data|date:"d/m/Y" }}
+                            </td>
+                            <td>{{ m.descricao }}</td>
+                            <td class="text-center">{{ m.quantidade }}</td>
+                            <td class="text-end text-muted">R$ {{ m.valor_unitario|floatformat:2 }}</td>
+                            <td class="text-end fw-bold text-dark">R$ {{ m.total_item|floatformat:2 }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="total-equip text-end mt-2">
+                Subtotal do Patrimônio: R$ <span class="valor-equipamento-js">{{ item.total|floatformat:2 }}</span>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+
+    <div id="bloco-soma-geral" class="justify-content-between align-items-center">
+        <div>
+            <h4 class="mb-0 text-white fw-bold">INVESTIMENTO TOTAL EM MANUTENÇÕES</h4>
+            <p class="mb-0 opacity-75 small">Soma acumulada de todos os registros acima.</p>
+        </div>
+        <div class="text-end">
+            <h1 class="mb-0 fw-bold text-success" id="resultado-total-geral">R$ 0,00</h1>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- <script>
+    window.onload = function() {
+        let somaTotalAcumulada = 0;
+        const listaValores = document.querySelectorAll('.valor-equipamento-js');
+        
+        listaValores.forEach(span => {
+            let valorTexto = span.innerText.replace(/\./g, '').replace(',', '.').trim();
+            let valorNum = parseFloat(valorTexto);
+            if (!isNaN(valorNum)) { somaTotalAcumulada += valorNum; }
+        });
+
+        if (somaTotalAcumulada > 0) {
+            const blocoFinal = document.getElementById('bloco-soma-geral');
+            const h1Display = document.getElementById('resultado-total-geral');
+            h1Display.innerText = somaTotalAcumulada.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            blocoFinal.style.display = 'flex';
+        }
+       
+    };
+</script>  -->
+
+
+
+<script>
+    // Função para calcular a soma total baseada no que está visível na tela
+    function calcularSomaTotal() {
+        let somaTotalAcumulada = 0;
+        // Pega apenas os valores dos equipamentos que NÃO estão escondidos
+        const cardsVisiveis = document.querySelectorAll('.card:not([style*="display: none"])');
+        
+        cardsVisiveis.forEach(card => {
+            const span = card.querySelector('.valor-equipamento-js');
+            if (span) {
+                let valorTexto = span.innerText.replace(/\./g, '').replace(',', '.').trim();
+                let valorNum = parseFloat(valorTexto);
+                if (!isNaN(valorNum)) { somaTotalAcumulada += valorNum; }
+            }
+        });
+
+        const blocoFinal = document.getElementById('bloco-soma-geral');
+        const h1Display = document.getElementById('resultado-total-geral');
+
+        if (somaTotalAcumulada > 0) {
+            h1Display.innerText = somaTotalAcumulada.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            blocoFinal.style.display = 'flex';
+        } else {
+            blocoFinal.style.display = 'none'; // Esconde se não houver mais nada
+        }
+    }
+
+    // Função disparada ao clicar no botão de ocultar
+    function removerEquipamento(botao) {
+        // Encontra o card pai do botão clicado e o esconde
+        const card = botao.closest('.card');
+        card.style.display = 'none';
+        
+        // Recalcula o total sem esse equipamento
+        calcularSomaTotal();
+    }
+
+    // Executa o cálculo inicial ao carregar a página
+    window.onload = calcularSomaTotal;
+</script>
+
+
+
+</body>
+</html>

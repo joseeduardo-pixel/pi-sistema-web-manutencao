@@ -73,14 +73,6 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 '''
 DATABASES = {
-    'default': config(
-        "DATABASE_URL",
-        default=f'sqlite:///{BASE_DIR / "db.sqlite3"}',
-        cast=db_url,
-        )
-}
-'''
-DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'manutencao_db',
@@ -91,7 +83,18 @@ DATABASES = {
         'OPTIONS': {'charset': 'utf8mb4'},
     }
 }
+'''
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
+    }
+}
 
 
 
